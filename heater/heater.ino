@@ -31,7 +31,7 @@
 NTC_Thermistor* thermistor = new NTC_Thermistor(THERMISTOR_PIN, 10000, 100000, 25, 3950);
 SmoothThermistor* sthermistor = new SmoothThermistor(thermistor, SMOOTHING_WINDOW);
 bool pOnM = false;
-double pwmOut, curTemp, setTemp = 23;
+double pwmOut, curTemp, setTemp = 180;
 PID pid(&curTemp, &pwmOut, &setTemp, KP, KI, KD, P_ON_E, DIRECT);
 
 void setup(void) {
