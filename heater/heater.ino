@@ -16,6 +16,10 @@
  * limitations under the License.
  */
 
+// Libraries required:
+// - NTC_Thermister (Yurii Salimov) [Source: Arduino Library Manager]
+// - PID (Brett Beuuregard) [Source: Arduino Library Manager]
+
 #include <NTC_Thermistor.h>
 #include <SmoothThermistor.h>
 #include <PID_v1.h>

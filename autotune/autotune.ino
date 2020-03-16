@@ -16,6 +16,11 @@
  * limitations under the License.
  */
 
+// Libraries required:
+// - NTC_Thermister (Yurii Salimov) [Source: Arduino Library Manager]
+// - PID (Brett Beuuregard) [Source: Arduino Library Manager]
+// - Arduino-PID-AutoTune-Library (br3ttb) [Source: https://github.com/br3ttb/Arduino-PID-AutoTune-Library]
+
 #include <NTC_Thermistor.h>
 #include <SmoothThermistor.h>
 #include <PID_AutoTune_v0.h>
