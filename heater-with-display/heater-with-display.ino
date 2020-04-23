@@ -50,15 +50,16 @@ NTC_Thermistor* thermistor = new NTC_Thermistor(THERMISTOR_PIN, 10000, 100000, 2
 SmoothThermistor* sthermistor = new SmoothThermistor(thermistor, SMOOTHING_WINDOW);
 PID pid(&curTemp, &pwmOut, &setTemp, KP, KI, KD, P_ON_E, DIRECT);
 ClickEncoder encoder(KY040_CLK, KY040_DT, KY040_SW, KY040_STEPS_PER_NOTCH);
+SSOLED ssoled;
 
 void refreshDisplay() {
-  oledFill(0, 1);
+  oledFill(&ssoled, 0, 1);
   char msg[64];
   sprintf(msg, "Hotend: %dc", (int)curTemp);
-  oledWriteString(0, 0, 1, msg, FONT_NORMAL, 0, 1);
+  oledWriteString(&ssoled, 0, 0, 1, msg, FONT_NORMAL, 0, 1);
   sprintf(msg, "Target: %dc", (int)setTemp);
-  oledWriteString(0, 0, 3, msg, FONT_NORMAL, 0, 1);
-  oledWriteString(0, 0, 6, heaterOn ? "Heating..." : "- Heater off -", FONT_NORMAL, heaterOn ? 1 : 0, 1);
+  oledWriteString(&ssoled, 0, 0, 3, msg, FONT_NORMAL, 0, 1);
+  oledWriteString(&ssoled, 0, 0, 6, heaterOn ? "Heating..." : "- Heater off -", FONT_NORMAL, heaterOn ? 1 : 0, 1);
 }
 
 void encoderISR() {
@@ -77,8 +78,8 @@ void setup() {
   encoder.setAccelerationEnabled(true);
   Timer1.initialize(10000);
   Timer1.attachInterrupt(encoderISR); 
-  
-  oledInit(OLED_128x64, 0, 0, -1, -1, -1, 400000L);
+
+  oledInit(&ssoled, OLED_128x64, -1, 0, 0, 1, -1, -1, -1, 400000L);
   refreshDisplay();
 }
 
