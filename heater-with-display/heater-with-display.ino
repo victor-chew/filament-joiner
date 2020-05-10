@@ -76,7 +76,7 @@ void setup() {
   digitalWrite(LED_BUILTIN, LOW);
 
   encoder.setAccelerationEnabled(true);
-  Timer1.initialize(10000);
+  Timer1.initialize(1000);
   Timer1.attachInterrupt(encoderISR); 
 
   oledInit(&ssoled, OLED_128x64, -1, 0, 0, 1, -1, -1, -1, 400000L);
