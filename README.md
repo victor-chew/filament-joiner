@@ -17,7 +17,7 @@ Code for setting up and driving a 3D printer hotend rigged up to an Arduino to p
 
 ## Prototype
 
-![Filament joiner prototype](https://github.com/victor-chew/filament-joiner/raw/master/images/filament-joiner.png)
+![Filament joiner prototype](https://github.com/victor-chew/filament-joiner/raw/master/images/filament-joiner.jpg)
 
 ## Forks
 
