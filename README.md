@@ -21,4 +21,4 @@ Code for setting up and driving a 3D printer hotend rigged up to an Arduino to p
 
 ## Forks
 
-- [Alex Bagaglia created a fork using Nokia LCD 5110 and also modded the PID control for his setup](https://www.randseq.org/2020/03/filament-joiner-part-2-with-display-and.html)
+- [Alex Bagaglia created a fork using Nokia LCD 5110, and also modded the PID control for his setup](https://www.randseq.org/2020/03/filament-joiner-part-2-with-display-and.html)
